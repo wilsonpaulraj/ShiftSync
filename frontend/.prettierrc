@@ -1,0 +1,7 @@
+{
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindAttributes": ["myClassList"],
+  "tailwindFunctions": ["clsx", "tw"],
+  "tailwindPreserveDuplicates": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
