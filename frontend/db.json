@@ -1,14 +1,148 @@
 {
   "users": [
     {
-      "id": "bbfe",
+      "id": "c1a6",
+      "firstName": "wilson",
+      "lastName": "paulraj",
       "email": "wilsonpaulrajd@gmail.com",
-      "password": "123456"
+      "businessType": "Administration",
+      "organizationName": "ShiftSync",
+      "organizationAddress": "7/3, Thanneer Pandhal Colony, Tirupur",
+      "phone": "7708323077",
+      "password": "123456",
+      "role": "Manager",
+      "confirm-password ": "123456"
     },
     {
-      "id": "20f2",
+      "id": "6301",
+      "firstName": "yuirtyrt",
+      "lastName": "uvbrintovb",
       "email": "727722euai070@skcet.ac.in",
-      "password": "123456"
+      "businessType": "ubn6g4o",
+      "organizationName": "394nu5g95b",
+      "organizationAddress": "0jmgd5ch3d",
+      "phone": "56789024354",
+      "password": "`123456",
+      "role": "Manager",
+      "confirm-password ": "40574892320"
+    },
+    {
+      "id": "cc03",
+      "firstName": "lucy",
+      "lastName": "roux",
+      "email": "lcrox@gmail.com",
+      "businessType": "Admin",
+      "organizationName": "Akagami Kaizouku",
+      "organizationAddress": "Elbaf, Grand Line",
+      "phone": "77083-23077",
+      "password": "123",
+      "role": "Manager",
+      "employeeList": [],
+      "confirm-password ": "123"
+    },
+    {
+      "id": "bbf6",
+      "firstName": "reg",
+      "lastName": "gr",
+      "email": "ergtyhger",
+      "businessType": "tcyvbnml",
+      "organizationName": "gf hjkl;",
+      "organizationAddress": "etryuiop",
+      "phone": "egrthtgfec",
+      "password": "123456789",
+      "role": "Manager",
+      "employeeList": [],
+      "confirm-password ": "123456789"
+    },
+    {
+      "id": "357e",
+      "firstName": "wilson",
+      "lastName": "d",
+      "email": "727722euai070@skcet.ac.in",
+      "businessType": "Education",
+      "organizationName": "ShiftSync",
+      "organizationAddress": "12,street, addersss",
+      "phone": " 77083-23077",
+      "password": "1234",
+      "role": "Manager",
+      "employeeList": [],
+      "confirm-password ": "1234"
+    },
+    {
+      "id": "7805",
+      "firstName": "pinju",
+      "lastName": "s",
+      "email": "wil_sonb@gmail.com",
+      "phone": "6478903345",
+      "password": "12345",
+      "employeeID": "12345",
+      "department": "ovfery",
+      "managerName": "ekwrjget",
+      "organizationName": "oebet",
+      "employeeRole": "webdev",
+      "role": "Employee",
+      "confirmPassword": "12345"
+    },
+    {
+      "id": "07ea",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": "",
+      "password": "",
+      "employeeID": "",
+      "department": "",
+      "managerName": "",
+      "organizationName": "",
+      "employeeRole": "",
+      "role": "Employee",
+      "confirmPassword": ""
+    },
+    {
+      "id": "bbe8",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": "",
+      "password": "",
+      "employeeID": "",
+      "department": "",
+      "managerName": "",
+      "organizationName": "",
+      "employeeRole": "",
+      "role": "Employee",
+      "confirmPassword": ""
+    },
+    {
+      "id": "071a",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "businessType": "",
+      "organizationName": "",
+      "organizationAddress": "",
+      "phone": "",
+      "password": "",
+      "role": "Manager",
+      "employeeList": []
+    }
+  ],
+  "employees": [
+    {
+      "id": "ecfe",
+      "firstName": "Wilson",
+      "lastName": "Paulraj",
+      "email": "wilsonpaulrajd@gmail.com",
+      "role": "Web Developer"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "fd94",
+      "date": "2024-07-19",
+      "time": "2:50",
+      "location": "Coimbatore",
+      "staffRequired": "3"
     }
   ]
 }
