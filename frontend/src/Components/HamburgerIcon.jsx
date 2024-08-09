@@ -21,7 +21,7 @@ const HamburgerIcon = ({ isOpen, onClick }) => {
             ...lineStyles,
             width: "24px",
             height: "2px",
-            transform: isOpen ? "rotate(44deg) translate(5.5px, 5px)" : "none",
+            transform: isOpen ? "rotate(44deg) translate(5.5px, 5px)" : "",
           }}
         />
         <div
@@ -29,7 +29,7 @@ const HamburgerIcon = ({ isOpen, onClick }) => {
             ...lineStyles,
             width: "20px",
             height: "2px",
-            transform: isOpen ? "scale(0)" : "none",
+            transform: isOpen ? "scale(0)" : "",
           }}
         />
         <div
@@ -37,7 +37,7 @@ const HamburgerIcon = ({ isOpen, onClick }) => {
             ...lineStyles,
             width: "24px",
             height: "2px",
-            transform: isOpen ? "rotate(-47deg) translate(6px, -5px)" : "none",
+            transform: isOpen ? "rotate(-47deg) translate(6px, -5px)" : "",
           }}
         />
       </div>

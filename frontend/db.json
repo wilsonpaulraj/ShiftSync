@@ -82,49 +82,6 @@
       "employeeRole": "webdev",
       "role": "Employee",
       "confirmPassword": "12345"
-    },
-    {
-      "id": "07ea",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "phone": "",
-      "password": "",
-      "employeeID": "",
-      "department": "",
-      "managerName": "",
-      "organizationName": "",
-      "employeeRole": "",
-      "role": "Employee",
-      "confirmPassword": ""
-    },
-    {
-      "id": "bbe8",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "phone": "",
-      "password": "",
-      "employeeID": "",
-      "department": "",
-      "managerName": "",
-      "organizationName": "",
-      "employeeRole": "",
-      "role": "Employee",
-      "confirmPassword": ""
-    },
-    {
-      "id": "071a",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "businessType": "",
-      "organizationName": "",
-      "organizationAddress": "",
-      "phone": "",
-      "password": "",
-      "role": "Manager",
-      "employeeList": []
     }
   ],
   "employees": [
@@ -133,6 +90,13 @@
       "firstName": "Wilson",
       "lastName": "Paulraj",
       "email": "wilsonpaulrajd@gmail.com",
+      "role": "Web Developer"
+    },
+    {
+      "id": "1e3d",
+      "firstName": "wilson",
+      "lastName": "Paulraj",
+      "email": "727722euai070@skcet.ac.in",
       "role": "Web Developer"
     }
   ],
@@ -143,6 +107,13 @@
       "time": "2:50",
       "location": "Coimbatore",
       "staffRequired": "3"
+    },
+    {
+      "id": "d3e0",
+      "date": "2024-08-24",
+      "time": "2:50",
+      "location": "Coimbatore",
+      "staffRequired": "09"
     }
   ]
 }

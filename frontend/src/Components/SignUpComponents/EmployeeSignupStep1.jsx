@@ -14,6 +14,7 @@ const EmployeeSignupStep1 = ({ formData, handleChange }) => {
           <div className="flex justify-between">
             <input
               className="h-10 w-48 rounded-md border border-solid border-slate-500 bg-white p-2 outline-none"
+              required
               type="text"
               id="first-name"
               name="firstName"
@@ -23,6 +24,7 @@ const EmployeeSignupStep1 = ({ formData, handleChange }) => {
             />
             <input
               className="h-10 w-44 rounded-md border border-solid border-slate-500 bg-white p-2 outline-none"
+              required
               type="text"
               id="lastName"
               name="lastName"
@@ -38,6 +40,7 @@ const EmployeeSignupStep1 = ({ formData, handleChange }) => {
           </label>
           <input
             className="h-10 w-96 rounded-md border border-solid border-slate-500 bg-white p-2 outline-none"
+            required
             type="text"
             id="email"
             name="email"
@@ -60,6 +63,7 @@ const EmployeeSignupStep1 = ({ formData, handleChange }) => {
             />
             <input
               className="h-10 w-80 rounded-md border border-solid border-slate-500 bg-white p-2 outline-none"
+              required
               type="text"
               id="phone"
               name="phone"

@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import React from "react";
 import Navbar from "../Components/Navbar";
-import backgroundImage from "/image.png";
+import backgroundImage from "/calendar.jpg";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 
@@ -11,14 +11,7 @@ const Home = () => {
     <div className="flex h-screen w-screen flex-col justify-between overflow-hidden">
       <div>
         <Navbar />
-        <div
-          className="h-128 bg-white bg-blend-multiply"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
+        <div className="flex h-128 bg-white bg-blend-multiply">
           <div className="flex h-128 w-1/2 flex-col bg-white p-20 pl-44">
             <h1 className="p-5 text-5xl font-bold">
               <span className="text-blue-800">Shift</span>
@@ -36,6 +29,9 @@ const Home = () => {
             >
               Get Started
             </button>
+          </div>
+          <div className="masked-image">
+            <img src="/calendar.jpg" className="" alt="" />
           </div>
         </div>
       </div>

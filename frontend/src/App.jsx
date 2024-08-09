@@ -9,6 +9,7 @@ import OwnerSignup from "./Pages/OwnerSignup";
 import ManagerDashboard from "./Pages/ManagerDashboard";
 import EmployeeDashboard from "./Pages/EmployeeDashboard";
 import PrivateRoute from "./PrivateRoute";
+import ProfilePage from "./Pages/Profile";
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -29,6 +30,14 @@ function App() {
           element={
             <PrivateRoute>
               <EmployeeDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
             </PrivateRoute>
           }
         />

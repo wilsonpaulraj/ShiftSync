@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clip-random {
+  clip-path: polygon(
+    42% 0%,
+    75% 10%,
+    95% 40%,
+    87% 75%,
+    60% 95%,
+    30% 87%,
+    5% 60%,
+    10% 25%
+  );
+}
+
+.masked-image img {
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: url("/Shape.png");
+  -webkit-mask-size: cover;
+  mask-image: url("/Shape.png");
+  mask-size: cover;
+}
