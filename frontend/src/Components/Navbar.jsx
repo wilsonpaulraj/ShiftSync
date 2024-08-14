@@ -28,12 +28,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex w-screen justify-between px-24 py-4 ${location.pathname !== "/" ? "bg-slate-200" : "bg-white"}`}
+      className={`flex h-24 w-screen justify-between px-24 py-4 drop-shadow-md ${location.pathname !== "/" ? "bg-slate-200" : "bg-white"}`}
     >
       <ul className="flex items-center justify-center">
         <Link to="/">
-          <li className="flex items-center justify-center pr-20">
-            <img className="h-16 w-16" src="/logo.png" alt="logo" />
+          <li className="flex items-center justify-center pr-10">
+            <img className="h-12 w-12" src="/logo.png" alt="logo" />
             <span className="text-2xl font-bold text-blue-900">Shift</span>
             <span className="text-2xl font-bold italic text-blue-400">
               Sync
@@ -42,10 +42,24 @@ const Navbar = () => {
         </Link>
         {location.pathname === "/" && (
           <li className="flex items-center justify-between">
-            <h3 className="mx-5 text-2xl font-bold text-blue-950">Schedule</h3>
-            <h3 className="mx-5 text-2xl font-bold text-blue-900">Features</h3>
-            <h3 className="mx-5 text-2xl font-bold text-blue-900">Pricing</h3>
-            <h3 className="mx-5 text-2xl font-bold text-blue-900">More</h3>
+            <Link to="">
+              <h3 className="text-md mx-5 font-semibold text-gray-500">
+                EMPLOYEE SCHEDULING
+              </h3>
+            </Link>
+            <Link to="">
+              <h3 className="text-md mx-5 font-semibold text-gray-500">
+                FEATURES
+              </h3>
+            </Link>
+            <Link to="">
+              <h3 className="text-md mx-5 font-semibold text-gray-500">
+                PRICING
+              </h3>
+            </Link>
+            <Link to="">
+              <h3 className="text-md mx-5 font-semibold text-gray-500">MORE</h3>
+            </Link>
           </li>
         )}
       </ul>
@@ -53,20 +67,20 @@ const Navbar = () => {
         <ul className="flex items-center justify-center">
           <li className="flex justify-between">
             <button
-              className="mr-4 text-xl font-bold"
+              className="text-md mr-4 font-semibold text-gray-500"
               onClick={() => {
                 navigate("/login");
               }}
             >
-              Login
+              LOGIN
             </button>
             <button
-              className="duration-1 00 ml-4 rounded bg-blue-500 p-2 px-6 text-xl font-bold text-white transition ease-in-out hover:bg-blue-900"
+              className="duration-1 00 text-md ml-4 rounded bg-blue-500 p-2 px-6 font-bold text-white transition ease-in-out hover:bg-blue-900"
               onClick={() => {
                 navigate("/signup");
               }}
             >
-              Get Started
+              GET STARTED
             </button>
           </li>
         </ul>

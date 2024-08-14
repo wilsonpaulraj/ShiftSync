@@ -8,9 +8,11 @@ const initialState = {
   organizationName: "",
   organizationAddress: "",
   phone: "",
+  countryCode: "",
   password: "",
   role: "Manager",
-  employeeList: [],
+  confirmPassword: "",
+  managerID: ""
 };
 
 const ownerSignupSlice = createSlice({
@@ -18,7 +20,15 @@ const ownerSignupSlice = createSlice({
   initialState,
   reducers: {
     updateFormData: (state, action) => {
-      return { ...state, ...action.payload };
+      const { payload } = action;
+      // Ensure nested updates are handled properly
+      for (const key in payload) {
+        if (typeof payload[key] === "object" && payload[key] !== null) {
+          state[key] = { ...state[key], ...payload[key] };
+        } else {
+          state[key] = payload[key];
+        }
+      }
     },
     resetFormData: () => initialState,
   },

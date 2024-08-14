@@ -1,13 +1,44 @@
-// src/components/ScheduleManagement.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const ScheduleManagement = () => {
-  const [schedules, setSchedules] = useState([]);
+  const [shifts, setShifts] = useState([]);
+  const [employees, setEmployees] = useState([]);
+  const [assignments, setAssignments] = useState([]);
   const [form, setForm] = useState({
-    date: "",
-    shift: "",
-    employee: "",
+    shiftId: "",
+    employeeId: "",
   });
+
+  // Fetch shifts and employees on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const shiftsResponse = await axios.get("http://localhost:8000/shifts/");
+        const employeesResponse = await axios.get("http://localhost:8000/employees/");
+        const assigns = await axios.get("http://localhost:8080/assignments");
+        setAssignments(assigns.data);
+        console.log(shiftsResponse)
+        console.log(employeesResponse)
+        
+        if (shiftsResponse.status === 200) {
+          setShifts(shiftsResponse.data);
+        } else {
+          console.error("Failed to fetch shifts.");
+        }
+        
+        if (employeesResponse.status === 200) {
+          setEmployees(employeesResponse.data);
+        } else {
+          console.error("Failed to fetch employees.");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,44 +48,54 @@ const ScheduleManagement = () => {
     });
   };
 
+  const saveAssignments =  async (e) => {
+    try{
+    const response = await axios.post("http://localhost:8080/assignments", form);
+    }
+    catch(err){
+      console.log(err)
+    }
+
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSchedules([...schedules, form]);
+    const newAssignment = {
+      shiftId: form.shiftId,
+      employeeId: form.employeeId,
+    };
+    setAssignments([...assignments, newAssignment]);
     setForm({
-      date: "",
-      shift: "",
-      employee: "",
+      shiftId: "",
+      employeeId: "",
     });
   };
+
+  // const getEmployeeName = (employeeId) => {
+  //   const employee = employees.find((emp) => emp.id === employeeId);
+  //   return employee ? employee.employeeID : "Unknown";
+  // };
+
+  // const getShiftDetails = (shiftId) => {
+  //   const shift = shifts.find((sh) => sh.id === shiftId);
+  //   return shift ? `${shift.date} (${shift.startTime} - ${shift.endTime})` : "Unknown";
+  // };
 
   return (
     <div className="w-full p-20">
       <div className="flex w-full justify-between pb-10">
         <h1 className="text-2xl font-semibold text-dark-text">
-          Manage Schedules
+          Assign Employees to Shifts
         </h1>
       </div>
       <form onSubmit={handleSubmit} className="mb-10">
         <div className="mb-4">
           <label className="block text-lg font-medium text-dark-text">
-            Date
-          </label>
-          <input
-            type="date"
-            name="date"
-            value={form.date}
-            onChange={handleChange}
-            className="w-full rounded border px-4 py-2"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-lg font-medium text-dark-text">
             Shift
           </label>
           <select
-            name="shift"
-            value={form.shift}
+            name="shiftId"
+            value={form.shiftId}
             onChange={handleChange}
             className="w-full rounded border px-4 py-2"
             required
@@ -62,40 +103,57 @@ const ScheduleManagement = () => {
             <option value="" disabled>
               Select a shift
             </option>
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Night">Night</option>
+            {shifts.map((shift) => (
+              <option key={shift.id} value={`${shift.date} (${shift.startTime} - ${shift.endTime})`}>
+                {`${shift.date} (${shift.startTime} - ${shift.endTime})`}
+              </option>
+            ))}
           </select>
         </div>
         <div className="mb-4">
           <label className="block text-lg font-medium text-dark-text">
             Employee
           </label>
-          <input
-            type="text"
-            name="employee"
-            value={form.employee}
+          <select
+            name="employeeId"
+            value={form.employeeId}
             onChange={handleChange}
             className="w-full rounded border px-4 py-2"
             required
-          />
+          >
+            <option value="" disabled>
+              Select an employee
+            </option>
+            {employees.map((employee) => (
+              <option key={employee.employeeID} value={employee.employeeID}>
+                {employee.employeeID}
+              </option>
+            ))}
+          </select>
         </div>
         <button
           type="submit"
           className="rounded bg-green-500 px-5 py-2 font-medium text-white"
+          onClick={saveAssignments}
         >
-          Add Schedule
+          Assign
         </button>
       </form>
       <div>
-        {schedules.map((schedule, index) => (
+        <h2 className="text-xl font-semibold text-dark-text mb-4">
+          Assignments
+        </h2>
+        {assignments.map((assignment, index) => (
           <div
             key={index}
             className="flex w-full justify-between border-b-2 border-slate-800 p-5"
           >
-            <span className="w-44">{schedule.date}</span>
-            <span className="w-44">{schedule.shift}</span>
-            <span className="w-44">{schedule.employee}</span>
+            <span className="w-44">
+              {assignment.shiftId}
+            </span>
+            <span className="w-44">
+              {assignment.employeeId}
+            </span>
           </div>
         ))}
       </div>

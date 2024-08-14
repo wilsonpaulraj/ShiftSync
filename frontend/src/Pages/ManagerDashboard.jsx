@@ -11,12 +11,12 @@ const ManagerDashboard = () => {
   const [activeTab, setActiveTab] = useState("employee-list");
 
   return (
-    <div className="flex h-screen w-screen flex-col overflow-hidden">
+    <div className="flex h-screen w-screen flex-col overflow-hidden relative">
       <div className="w-screen">
         <Navbar />
       </div>
       <div className="flex border-t-2 border-white">
-        <div className="flex h-screen w-1/6 flex-col items-start justify-start bg-slate-200 py-10">
+        <div className="flex min-h-screen w-1/6 flex-col items-start justify-start bg-slate-200 py-10">
           <div className="w-full border-b-2 px-10">
             <h1 className="text-2xl font-bold text-dark-text">Dashboard</h1>
           </div>
@@ -54,7 +54,7 @@ const ManagerDashboard = () => {
             </li>
           </ul>
         </div>
-        <div className="w-5/6 bg-white">
+        <div className="w-5/6 overflow-y-scroll bg-white">
           {activeTab === "employee-list" && <EmployeeManagement />}
           {activeTab === "manage-shifts" && <ShiftManagement />}
           {activeTab === "schedule-management" && <ScheduleManagement />}

@@ -6,41 +6,30 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 const SignUp = () => {
   return (
     <div className="flex h-screen w-screen max-w-full justify-center">
-      <div className="flex h-screen w-2/5 flex-col justify-center bg-slate-100 px-20">
-        <div>
-          <h1 className="mb-2 text-7xl font-bold text-slate-400">Welcome</h1>
-          <h1 className="mx-2 text-4xl font-bold text-slate-400">
-            to <span className="text-blue-800">Shift</span>
-            <span className="italic text-blue-400">Sync</span>
-            <span className="text-blue-400">!</span>
-          </h1>
-        </div>
-        <div className="flex w-full justify-center">
-          <img
-            style={{ height: "30rem", width: "30rem" }}
-            className=""
-            src="/signup-image-2.png"
-            alt="Reload"
-          />
-        </div>
+      <div className="flex h-screen w-2/5 flex-col justify-center bg-slate-100 pt-16">
+        <img
+          className="h-full w-full"
+          src="/signup-image-1.svg"
+          alt="If this image doesn't load, then you're gay"
+        />
       </div>
-      <div className="flex w-3/5 flex-col bg-white">
-        <div className="flex justify-end p-10 text-2xl">
+      <div className="flex w-3/5 flex-col gap-3 bg-white">
+        <div className="flex justify-end px-10 py-5 text-xl">
           Already have an account?
           <Link className="ml-2 font-medium text-blue-800" to="/login">
             Login
           </Link>
         </div>
         <div className="flex flex-col items-center justify-center py-5">
-          <div className="flex flex-col">
-            <h1 className="mb-5 text-3xl font-bold text-slate-600">
+          <div className="flex flex-col gap-5">
+            <h1 className="text-3xl font-semibold text-gray-600">
               How will you be using ShiftSync ?
             </h1>
 
-            <div className="flex flex-col">
-              <div className="my-5 flex w-144 justify-between rounded-xl bg-slate-300 p-10">
+            <div className="flex flex-col gap-1">
+              <div className="hover:scale-103 flex w-144 justify-between rounded-xl bg-slate-100 p-8 transition duration-500 ease-in-out hover:shadow-lg">
                 <div className="mr-10 flex w-2/3 flex-col justify-between">
-                  <h1 className="mb-5 text-3xl font-bold text-dark-text">
+                  <h1 className="mb-5 text-3xl font-bold text-light-text">
                     Do you own or manage a business ?
                   </h1>
                   <span className="text-xl font-medium text-blue-900 underline">
@@ -63,9 +52,9 @@ const SignUp = () => {
                   />
                 </div>
               </div>
-              <div className="my-5 flex w-144 rounded-xl bg-slate-300 p-10">
+              <div className="my-5 flex w-144 rounded-xl bg-slate-100 p-8 transition duration-500 ease-in-out hover:shadow-lg">
                 <div className="mr-10 flex w-2/3 flex-col justify-between">
-                  <h1 className="mb-5 text-3xl font-bold text-dark-text">
+                  <h1 className="mb-5 text-3xl font-bold text-light-text">
                     Are you an Employee joining a team
                   </h1>
                   <span className="text-xl font-medium text-blue-900 underline">

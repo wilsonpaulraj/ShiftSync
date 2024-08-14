@@ -1,37 +1,39 @@
 // src/pages/Home.jsx
 import React from "react";
 import Navbar from "../Components/Navbar";
-import backgroundImage from "/calendar.jpg";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex h-screen w-screen flex-col justify-between overflow-hidden">
+    <div className="flex h-screen w-screen flex-col justify-between overflow-hidden bg-slate-100">
       <div>
         <Navbar />
-        <div className="flex h-128 bg-white bg-blend-multiply">
-          <div className="flex h-128 w-1/2 flex-col bg-white p-20 pl-44">
-            <h1 className="p-5 text-5xl font-bold">
-              <span className="text-blue-800">Shift</span>
-              <span className="italic text-blue-400">Sync</span>
-              <span className="text-blue-400">!</span>
-            </h1>
-            <h2 className="px-5 text-2xl font-medium text-dark-text">
-              "Synchronize Your Shifts, Simplify Your Work Life."
+        <div className="flex h-128 px-40 py-10 bg-blend-multiply">
+          <div className="flex h-128 w-1/2 flex-col py-20">
+            <h2 className="mb-2 text-4xl font-bold text-light-text">
+              <span className="text-5xl">S</span>ynchronize your shifts
+              <br></br>
             </h2>
+            <h2 className="mb-5 text-4xl font-bold text-light-text">
+              <span className="ml-16">Simplify your Work Life !</span>
+            </h2>
+            <h3 className="mb-4 mt-8 w-128 text-lg text-gray-700">
+              Discover the pinnacle of staff scheduling —— Try out the best app
+              on the market today
+            </h3>
             <button
-              className="my-10 ml-4 w-48 rounded bg-blue-500 p-2 px-6 text-xl font-bold text-white transition duration-300 ease-in-out hover:bg-blue-900"
+              className="text-md w-48 rounded bg-blue-500 p-2 px-6 font-bold text-white transition duration-300 ease-in-out hover:bg-blue-700"
               onClick={() => {
                 navigate("/signup");
               }}
             >
-              Get Started
+              GET STARTED
             </button>
           </div>
-          <div className="masked-image">
-            <img src="/calendar.jpg" className="" alt="" />
+          <div className="h-full w-1/2">
+            <img src="/sticky-notes-1.svg" className="h-full w-full" alt="" />
           </div>
         </div>
       </div>

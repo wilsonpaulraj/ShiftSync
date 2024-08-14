@@ -10,7 +10,7 @@ export default {
         "navy-blue": "#3A4355",
         "pewter-gray": "#9F9FA1",
         "dark-text": "#193441",
-        "light-text": "#3E606F",
+        "light-text": "#4c6379",
         "dark-gray": "#91AAB4",
         "light-gray": "#CBDBD7",
         white: "#FCFFF5",

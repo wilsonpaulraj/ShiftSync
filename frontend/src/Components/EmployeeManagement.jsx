@@ -1,32 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import {
-  fetchEmployees,
-  addEmployee,
-  updateEmployee,
-  deleteEmployee,
-} from "../Redux/employeeSlice";
 
 const EmployeeManagement = () => {
-  const dispatch = useDispatch();
-  const employees = useSelector((state) => state.employees.employees);
-  const status = useSelector((state) => state.employees.status);
-  const error = useSelector((state) => state.employees.error);
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchEmployees());
-    }
-  }, [status, dispatch]);
-
+  const [employees, setEmployees] = useState([
+    // Sample data to simulate initial employee list
+    { id: 1, employeeID: "Emp0031", employeeRole: "Developer", firstName: "Wilson", department: "Engineering" },
+    { id: 2, employeeID: "Emp0029", employeeRole: "Designer", firstName: "Paulraj ", department: "Design" }
+  ]);
   const [newEmployee, setNewEmployee] = useState({
+    employeeID: "",
+    employeeRole: "",
     firstName: "",
-    lastName: "",
-    email: "",
-    role: "",
+    department: "",
   });
+  const [editingEmployee, setEditingEmployee] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,30 +22,60 @@ const EmployeeManagement = () => {
   };
 
   const handleAddEmployee = () => {
-    dispatch(addEmployee(newEmployee));
-    setNewEmployee({ firstName: "", lastName: "", email: "", role: "" });
-  };
-
-  const handleDeleteEmployee = (id) => {
-    dispatch(deleteEmployee(id));
+    const newId = employees.length ? employees[employees.length - 1].id + 1 : 1;
+    const employeeData = {
+      ...newEmployee,
+      id: newId
+    };
+    setEmployees([...employees, employeeData]);
+    setNewEmployee({
+      employeeID: "",
+      employeeRole: "",
+      firstName: "",
+      department: "",
+    });
   };
 
   const handleEditEmployee = (employee) => {
-    const updatedEmployee = { ...employee, role: "updatedRole" };
-    dispatch(updateEmployee(updatedEmployee));
+    setEditingEmployee(employee);
+    setNewEmployee({
+      employeeID: employee.employeeID,
+      employeeRole: employee.employeeRole,
+      firstName: employee.firstName,
+      department: employee.department,
+    });
+  };
+
+  const handleUpdateEmployee = () => {
+    const updatedEmployees = employees.map(emp =>
+      emp.id === editingEmployee.id ? { ...emp, ...newEmployee } : emp
+    );
+    setEmployees(updatedEmployees);
+    setEditingEmployee(null);
+    setNewEmployee({
+      employeeID: "",
+      employeeRole: "",
+      firstName: "",
+      department: "",
+    });
+  };
+
+  const handleDeleteEmployee = (id) => {
+    const filteredEmployees = employees.filter(emp => emp.id !== id);
+    setEmployees(filteredEmployees);
   };
 
   return (
     <div className="h-full w-full bg-gray-100 p-8">
       <div className="mb-8 flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-800">
-          Add new Employee
+          {editingEmployee ? "Edit Employee" : "Add New Employee"}
         </h1>
         <button
           className="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700"
-          onClick={handleAddEmployee}
+          onClick={editingEmployee ? handleUpdateEmployee : handleAddEmployee}
         >
-          Add Employee
+          {editingEmployee ? "Update Employee" : "Add Employee"}
         </button>
       </div>
       <div className="mt-8">
@@ -65,34 +83,34 @@ const EmployeeManagement = () => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <input
               type="text"
+              name="employeeID"
+              value={newEmployee.employeeID}
+              onChange={handleChange}
+              placeholder="Employee ID"
+              className="rounded border border-gray-300 p-2"
+            />
+            <input
+              type="text"
+              name="employeeRole"
+              value={newEmployee.employeeRole}
+              onChange={handleChange}
+              placeholder="Employee Role"
+              className="rounded border border-gray-300 p-2"
+            />
+            <input
+              type="text"
               name="firstName"
               value={newEmployee.firstName}
               onChange={handleChange}
-              placeholder="First Name"
+              placeholder="Name"
               className="rounded border border-gray-300 p-2"
             />
             <input
               type="text"
-              name="lastName"
-              value={newEmployee.lastName}
+              name="department"
+              value={newEmployee.department}
               onChange={handleChange}
-              placeholder="Last Name"
-              className="rounded border border-gray-300 p-2"
-            />
-            <input
-              type="email"
-              name="email"
-              value={newEmployee.email}
-              onChange={handleChange}
-              placeholder="Email"
-              className="rounded border border-gray-300 p-2"
-            />
-            <input
-              type="text"
-              name="role"
-              value={newEmployee.role}
-              onChange={handleChange}
-              placeholder="Role"
+              placeholder="Department"
               className="rounded border border-gray-300 p-2"
             />
           </div>
@@ -100,18 +118,16 @@ const EmployeeManagement = () => {
       </div>
       <div className="mt-10 min-h-96 rounded bg-white p-4 shadow-md">
         <h2 className="text-2xl font-semibold">Employee List</h2>
-        {status === "loading" && <div>Loading...</div>}
-        {status === "failed" && <div>{error}</div>}
         <div className="divide-y divide-gray-300">
-          {employees.map((employee, index) => (
-            <div key={index} className="flex items-center justify-between py-4">
+          {employees.map((employee) => (
+            <div key={employee.id} className="flex items-center justify-between py-4">
               <div className="flex-1">
                 <span className="font-medium text-gray-700">
-                  {employee.firstName} {employee.lastName}
+                  {employee.firstName}
                 </span>
-                <span className="ml-4 text-gray-500">{employee.email}</span>
+                <span className="ml-4 text-gray-500">{employee.department}</span>
               </div>
-              <span className="mr-4 text-gray-600">{employee.role}</span>
+              <span className="mr-4 text-gray-600">{employee.employeeRole}</span>
               <div className="flex space-x-4">
                 <FontAwesomeIcon
                   icon={faEdit}

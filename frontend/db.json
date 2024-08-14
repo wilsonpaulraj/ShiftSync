@@ -1,87 +1,64 @@
 {
   "users": [
     {
-      "id": "c1a6",
-      "firstName": "wilson",
-      "lastName": "paulraj",
-      "email": "wilsonpaulrajd@gmail.com",
-      "businessType": "Administration",
-      "organizationName": "ShiftSync",
-      "organizationAddress": "7/3, Thanneer Pandhal Colony, Tirupur",
-      "phone": "7708323077",
+      "id": "2b07",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "businessType": "",
+      "organizationName": "",
+      "organizationAddress": "",
+      "phone": {
+        "countryCode": "",
+        "number": ""
+      },
+      "password": "",
+      "role": "Manager",
+      "employeeList": []
+    },
+    {
+      "id": "7d89",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "businessType": "",
+      "organizationName": "",
+      "organizationAddress": "",
+      "phone": {
+        "countryCode": "",
+        "number": ""
+      },
+      "password": "",
+      "role": "Manager"
+    },
+    {
+      "id": "279a",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "businessType": "",
+      "organizationName": "",
+      "organizationAddress": "",
+      "phone": "",
+      "password": "GJ7b3ANn!Kp=9&m",
+      "role": "Manager",
+      "confirm-password ": "GJ7b3ANn!Kp=9&m"
+    },
+    {
+      "id": "50e6",
+      "firstName": "wer",
+      "lastName": "rwe",
+      "email": "wewrfgn@fk.dc",
+      "phone": "1333333313",
+      "countryCode": "eom",
       "password": "123456",
-      "role": "Manager",
-      "confirm-password ": "123456"
-    },
-    {
-      "id": "6301",
-      "firstName": "yuirtyrt",
-      "lastName": "uvbrintovb",
-      "email": "727722euai070@skcet.ac.in",
-      "businessType": "ubn6g4o",
-      "organizationName": "394nu5g95b",
-      "organizationAddress": "0jmgd5ch3d",
-      "phone": "56789024354",
-      "password": "`123456",
-      "role": "Manager",
-      "confirm-password ": "40574892320"
-    },
-    {
-      "id": "cc03",
-      "firstName": "lucy",
-      "lastName": "roux",
-      "email": "lcrox@gmail.com",
-      "businessType": "Admin",
-      "organizationName": "Akagami Kaizouku",
-      "organizationAddress": "Elbaf, Grand Line",
-      "phone": "77083-23077",
-      "password": "123",
-      "role": "Manager",
-      "employeeList": [],
-      "confirm-password ": "123"
-    },
-    {
-      "id": "bbf6",
-      "firstName": "reg",
-      "lastName": "gr",
-      "email": "ergtyhger",
-      "businessType": "tcyvbnml",
-      "organizationName": "gf hjkl;",
-      "organizationAddress": "etryuiop",
-      "phone": "egrthtgfec",
-      "password": "123456789",
-      "role": "Manager",
-      "employeeList": [],
-      "confirm-password ": "123456789"
-    },
-    {
-      "id": "357e",
-      "firstName": "wilson",
-      "lastName": "d",
-      "email": "727722euai070@skcet.ac.in",
-      "businessType": "Education",
-      "organizationName": "ShiftSync",
-      "organizationAddress": "12,street, addersss",
-      "phone": " 77083-23077",
-      "password": "1234",
-      "role": "Manager",
-      "employeeList": [],
-      "confirm-password ": "1234"
-    },
-    {
-      "id": "7805",
-      "firstName": "pinju",
-      "lastName": "s",
-      "email": "wil_sonb@gmail.com",
-      "phone": "6478903345",
-      "password": "12345",
-      "employeeID": "12345",
-      "department": "ovfery",
-      "managerName": "ekwrjget",
-      "organizationName": "oebet",
-      "employeeRole": "webdev",
+      "employeeID": "123",
+      "department": "lmfe",
+      "managerID": "ekf ",
+      "organizationName": "3erf",
+      "employeeRole": "lfmkrg",
       "role": "Employee",
-      "confirmPassword": "12345"
+      "confirmPassword": "123456"
     }
   ],
   "employees": [
@@ -114,6 +91,28 @@
       "time": "2:50",
       "location": "Coimbatore",
       "staffRequired": "09"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "bcad",
+      "shiftId": "2024-08-20 (10:00:00 - 17:00:00)",
+      "employeeId": "E12345"
+    },
+    {
+      "id": "a789",
+      "shiftId": "2024-08-20 (10:00:00 - 17:00:00)",
+      "employeeId": "EMP0012"
+    },
+    {
+      "id": "e2e2",
+      "shiftId": "2024-08-31 (22:00:00 - 04:00:00)",
+      "employeeId": "EMP0012"
+    },
+    {
+      "id": "851e",
+      "shiftId": "2024-08-31 (22:00:00 - 04:00:00)",
+      "employeeId": "EMP0012D"
     }
   ]
 }

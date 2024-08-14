@@ -5,14 +5,15 @@ const initialState = {
   lastName: "",
   email: "",
   phone: "",
+  countryCode: "",
   password: "",
   employeeID: "",
   department: "",
-  managerName: "",
+  managerID: "",
   organizationName: "",
-  employeeRole: "",
-  role: "Employee",
   confirmPassword: "",
+  employeeRole: "",
+  role: "Employee", // Default role for employees
 };
 
 const employeeSignupSlice = createSlice({
@@ -20,7 +21,14 @@ const employeeSignupSlice = createSlice({
   initialState,
   reducers: {
     updateEmployeeFormData: (state, action) => {
-      return { ...state, ...action.payload };
+      const { payload } = action;
+      for (const key in payload) {
+        if (typeof payload[key] === "object" && payload[key] !== null) {
+          state[key] = { ...state[key], ...payload[key] };
+        } else {
+          state[key] = payload[key];
+        }
+      }
     },
     resetEmployeeFormData: () => initialState,
   },

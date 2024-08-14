@@ -1,20 +1,23 @@
-// src/components/ViewSchedule.jsx
-import React from "react";
-
-const shifts = [
-  {
-    date: "2024-08-01",
-    time: "09:00 - 17:00",
-    location: "Office",
-  },
-  {
-    date: "2024-08-02",
-    time: "13:00 - 21:00",
-    location: "Remote",
-  },
-];
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const ViewSchedule = () => {
+  const [shifts, setShifts] = useState([]);
+
+  useEffect(() => {
+    // Fetch shifts from the backend
+    const fetchShifts = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/shifts/");
+        setShifts(response.data);
+      } catch (error) {
+        console.error("Error fetching shifts:", error);
+      }
+    };
+
+    fetchShifts();
+  }, []);
+
   return (
     <div className="w-full p-20">
       <div className="flex w-full justify-between pb-10">
@@ -29,7 +32,7 @@ const ViewSchedule = () => {
             className="flex w-full justify-between border-b-2 border-slate-800 p-5"
           >
             <span className="w-44">{shift.date}</span>
-            <span className="w-44">{shift.time}</span>
+            <span className="w-44">{shift.startTime} - {shift.endTime}</span>
             <span className="w-44">{shift.location}</span>
           </div>
         ))}
