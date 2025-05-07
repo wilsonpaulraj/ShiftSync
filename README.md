@@ -123,5 +123,11 @@ Please follow the existing code style and conventions.
 
 ## Contact
 
-[Wilsonpaulraj]
-[wilsonpaulrajd@gmail.com]
+**Wilsonpaulraj**
+
+[![GitHub](https://img.shields.io/github/followers/wilsonpaulraj?style=social&label=Follow)](https://github.com/wilsonpaulraj/)
+[![Email](https://img.shields.io/badge/Email-wilsonpaulrajd%40gmail.com-brightgreen)](mailto:wilsonpaulrajd@gmail.com)
+
+[Wilsonpaulraj](https://github.com/wilsonpaulraj/)
+
+Feel free to connect with me on GitHub or send me an email.
